@@ -12,7 +12,7 @@
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/aminzabardast"
     },
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "type": "module",
