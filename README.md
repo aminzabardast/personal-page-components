@@ -1,3 +1,5 @@
 # Personal Page Components / Amin Zabardast
 
-TBD
+This is still a test package and it is unstable.
+
+**Use at your own risk**.
