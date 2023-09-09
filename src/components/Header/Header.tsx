@@ -13,7 +13,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu.js'
 import ThemeChangerButton from '../ThemeChangerButton/ThemeChangerButton'
 import { isUndefined } from 'lodash'
-import { useTheme } from '@mui/material/styles'
+import { useTheme } from '@mui/material/styles/index.js'
 
 type HeaderLink = {
     title: string
@@ -22,7 +22,7 @@ type HeaderLink = {
 // TODO: Import this from `ThemeChangerButton` component
 type mode = 'light' | 'dark'
 
-interface WebsiteTitleProps {
+interface HeaderProps {
     title: string
     subtitle?: string
     showAvatar?: boolean
@@ -32,7 +32,7 @@ interface WebsiteTitleProps {
     onThemeChange?: (mode: mode) => void
 }
 
-const WebsiteTitle = ({
+const Header = ({
     title,
     subtitle,
     showAvatar = false,
@@ -40,7 +40,7 @@ const WebsiteTitle = ({
     links = [],
     showThemeChanger = false,
     onThemeChange,
-}: WebsiteTitleProps) => {
+}: HeaderProps) => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
 
     const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -160,4 +160,4 @@ const WebsiteTitle = ({
     )
 }
 
-export default WebsiteTitle
+export default Header
