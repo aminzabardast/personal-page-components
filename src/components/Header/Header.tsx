@@ -10,7 +10,7 @@ import {
     Menu,
     MenuItem,
 } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
+import MenuIcon from '@mui/icons-material/Menu.js'
 import ThemeChangerButton from '../ThemeChangerButton/ThemeChangerButton'
 import { isUndefined } from 'lodash'
 import { useTheme } from '@mui/material/styles'

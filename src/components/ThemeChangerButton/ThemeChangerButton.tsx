@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, IconButton } from '@mui/material'
-import LightModeIcon from '@mui/icons-material/LightMode'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode.js'
+import DarkModeIcon from '@mui/icons-material/DarkMode.js'
 import { isUndefined } from 'lodash'
 
 type mode = 'light' | 'dark'
