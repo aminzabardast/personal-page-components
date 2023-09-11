@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "jsx": "react" /* Specify what JSX code is generated. TypeScript does not recognize JSX by default. */,
+        "jsx": "react-jsx" /* Specify what JSX code is generated. TypeScript does not recognize JSX by default. */,
         "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
         "module": "ESNext" /* Specify what module code is generated. */,
         "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
