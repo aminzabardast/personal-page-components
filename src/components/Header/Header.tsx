@@ -1,19 +1,18 @@
 import React, { JSX } from 'react'
-import {
-    Avatar,
-    Typography,
-    Stack,
-    Box,
-    AppBar,
-    Toolbar,
-    IconButton,
-    Menu,
-    MenuItem,
-} from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu.js'
+import Avatar from '@mui/material/Avatar'
+import Typography from '@mui/material/Typography'
+import Stack from '@mui/material/Stack'
+import Box from '@mui/material/Box'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import SvgIcon from "@mui/material/SvgIcon";
+import { mdiMenu } from '@mdi/js';
 import ThemeChangerButton from '../ThemeChangerButton/ThemeChangerButton'
 import { isUndefined } from 'lodash'
-import { useTheme } from '@mui/material/styles/index.js'
+import { useTheme } from '@mui/material/styles'
 
 type HeaderLink = {
     title: string
@@ -125,7 +124,9 @@ const Header = ({
                         color="inherit"
                         sx={{ display: { lg: 'none' } }}
                     >
-                        <MenuIcon />
+                        <SvgIcon>
+                            <path d={mdiMenu} />
+                        </SvgIcon>
                     </IconButton>
                     <Menu
                         id="menu-appbar"

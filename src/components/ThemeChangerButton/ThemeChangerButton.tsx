@@ -1,7 +1,9 @@
 import React from 'react'
-import { Button, IconButton } from '@mui/material'
-import LightModeIcon from '@mui/icons-material/LightMode.js'
-import DarkModeIcon from '@mui/icons-material/DarkMode.js'
+import IconButton from '@mui/material/IconButton'
+import Button from '@mui/material/Button'
+import SvgIcon from '@mui/material/SvgIcon'
+import { mdiBrightness4 } from '@mdi/js'
+import { mdiBrightness6 } from '@mdi/js'
 import { isUndefined } from 'lodash'
 
 type mode = 'light' | 'dark'
@@ -28,7 +30,7 @@ const ThemeChangerButton = ({
             <Button
                 onClick={click}
                 color="inherit"
-                endIcon={isLight ? <DarkModeIcon /> : <LightModeIcon />}
+                endIcon={isLight ? <SvgIcon><path d={mdiBrightness4} /></SvgIcon> : <SvgIcon><path d={mdiBrightness6} /></SvgIcon>}
             >
                 {isLight ? 'Dark Mode' : 'Light Mode'}
             </Button>
@@ -36,7 +38,7 @@ const ThemeChangerButton = ({
     } else {
         return (
             <IconButton color="inherit" onClick={click}>
-                {isLight ? <DarkModeIcon /> : <LightModeIcon />}
+                {isLight ? <SvgIcon><path d={mdiBrightness4} /></SvgIcon> : <SvgIcon><path d={mdiBrightness6} /></SvgIcon>}
             </IconButton>
         )
     }
