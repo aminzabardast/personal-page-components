@@ -31,7 +31,17 @@ const ThemeChangerButton = ({
             <Button
                 onClick={click}
                 color="inherit"
-                endIcon={isLight ? <SvgIcon><path d={mdiBrightness4} /></SvgIcon> : <SvgIcon><path d={mdiBrightness6} /></SvgIcon>}
+                endIcon={
+                    isLight ? (
+                        <SvgIcon>
+                            <path d={mdiBrightness4} />
+                        </SvgIcon>
+                    ) : (
+                        <SvgIcon>
+                            <path d={mdiBrightness6} />
+                        </SvgIcon>
+                    )
+                }
             >
                 {isLight ? 'Dark Mode' : 'Light Mode'}
             </Button>
@@ -40,7 +50,15 @@ const ThemeChangerButton = ({
         return (
             <Tooltip title={isLight ? 'Dark Mode' : 'Light Mode'}>
                 <IconButton color="inherit" onClick={click}>
-                    {isLight ? <SvgIcon><path d={mdiBrightness4} /></SvgIcon> : <SvgIcon><path d={mdiBrightness6} /></SvgIcon>}
+                    {isLight ? (
+                        <SvgIcon>
+                            <path d={mdiBrightness4} />
+                        </SvgIcon>
+                    ) : (
+                        <SvgIcon>
+                            <path d={mdiBrightness6} />
+                        </SvgIcon>
+                    )}
                 </IconButton>
             </Tooltip>
         )

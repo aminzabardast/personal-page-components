@@ -10,8 +10,8 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import SvgIcon from "@mui/material/SvgIcon";
-import { mdiMenu } from '@mdi/js';
+import SvgIcon from '@mui/material/SvgIcon'
+import { mdiMenu } from '@mdi/js'
 import ThemeChangerButton from '../ThemeChangerButton/ThemeChangerButton'
 import { isUndefined } from 'lodash'
 import { useTheme } from '@mui/material/styles'
@@ -106,10 +106,7 @@ const Header = ({
                     >
                         {links?.map(({ title }: HeaderLink): JSX.Element => {
                             return (
-                                <Button
-                                    key={title}
-                                    color="inherit"
-                                >
+                                <Button key={title} color="inherit">
                                     {title}
                                 </Button>
                             )
