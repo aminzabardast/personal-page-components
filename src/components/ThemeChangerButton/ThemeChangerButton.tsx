@@ -1,5 +1,6 @@
 import React from 'react'
 import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
 import SvgIcon from '@mui/material/SvgIcon'
 import { mdiBrightness4 } from '@mdi/js'
@@ -37,9 +38,11 @@ const ThemeChangerButton = ({
         )
     } else {
         return (
-            <IconButton color="inherit" onClick={click}>
-                {isLight ? <SvgIcon><path d={mdiBrightness4} /></SvgIcon> : <SvgIcon><path d={mdiBrightness6} /></SvgIcon>}
-            </IconButton>
+            <Tooltip title={isLight ? 'Dark Mode' : 'Light Mode'}>
+                <IconButton color="inherit" onClick={click}>
+                    {isLight ? <SvgIcon><path d={mdiBrightness4} /></SvgIcon> : <SvgIcon><path d={mdiBrightness6} /></SvgIcon>}
+                </IconButton>
+            </Tooltip>
         )
     }
 }
