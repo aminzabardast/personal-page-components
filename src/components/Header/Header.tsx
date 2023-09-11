@@ -1,5 +1,7 @@
 import React, { JSX } from 'react'
 import Avatar from '@mui/material/Avatar'
+import Button from '@mui/material/Button'
+import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
@@ -96,15 +98,29 @@ const Header = ({
                     </Box>
                 </Stack>
                 <Box sx={{ flexGrow: 1 }} />
-                {showThemeChanger && (
-                    <Box sx={{ display: { xs: 'none', lg: 'block' } }}>
+                <Box sx={{ display: { xs: 'none', lg: 'block' } }}>
+                    <Stack
+                        direction="row"
+                        divider={<Divider orientation="vertical" flexItem />}
+                        spacing={2}
+                    >
+                        {links?.map(({ title }: HeaderLink): JSX.Element => {
+                            return (
+                                <Button
+                                    key={title}
+                                    color="inherit"
+                                >
+                                    {title}
+                                </Button>
+                            )
+                        })}
                         <ThemeChangerButton
                             mode={theme.palette.mode}
-                            showTitle={true}
+                            showTitle={false}
                             onClick={handleThemeChange}
                         />
-                    </Box>
-                )}
+                    </Stack>
+                </Box>
                 {showThemeChanger && (
                     <Box sx={{ display: { xs: 'block', lg: 'none' } }}>
                         <ThemeChangerButton
@@ -143,7 +159,7 @@ const Header = ({
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >
-                        {links.map(({ title }: HeaderLink): JSX.Element => {
+                        {links?.map(({ title }: HeaderLink): JSX.Element => {
                             return (
                                 <MenuItem
                                     key={title}

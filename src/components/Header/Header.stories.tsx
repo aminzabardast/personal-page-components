@@ -22,13 +22,16 @@ export const Example: Story = {
         },
         links: [
             {
-                title: 'BTN1',
+                title: 'Home',
             },
             {
-                title: 'BTN2',
+                title: 'Blog',
             },
             {
-                title: 'BTN3',
+                title: 'Publications',
+            },
+            {
+                title: 'Contact',
             },
         ],
     },
