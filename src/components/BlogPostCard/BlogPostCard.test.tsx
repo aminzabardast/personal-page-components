@@ -6,6 +6,12 @@ import Card from './BlogPostCard'
 // TODO: Correct Tests
 describe('Card', () => {
     test('Card Renders', () => {
-        render(<Card title={'This is a card'} date={new Date()} summary={'This is a summary!'} />)
+        render(
+            <Card
+                title={'This is a card'}
+                date={new Date()}
+                summary={'This is a summary!'}
+            />
+        )
     })
 })

@@ -29,11 +29,13 @@ const BlogPostCard = ({
 }: BlogPostCardProps) => {
     return (
         <Card variant={'outlined'} style={{ border: 'none' }}>
-            {!isUndefined(image) && <CardMedia
-                sx={{ height: imageHeight }}
-                image={image}
-                title="green iguana"
-            />}
+            {!isUndefined(image) && (
+                <CardMedia
+                    sx={{ height: imageHeight }}
+                    image={image}
+                    title="green iguana"
+                />
+            )}
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div" noWrap>
                     {title}
@@ -46,7 +48,11 @@ const BlogPostCard = ({
                     >
                         {tags?.map((tag: string) => {
                             return (
-                                <Typography variant="caption" component="span">
+                                <Typography
+                                    key={tag}
+                                    variant="caption"
+                                    component="span"
+                                >
                                     {tag}
                                 </Typography>
                             )
