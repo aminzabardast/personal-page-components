@@ -12,6 +12,19 @@ type Story = StoryObj<typeof meta>
 
 export const Example: Story = {
     args: {
-        title: 'This is a Story.',
+        socialMedias: [
+            {
+                type: 'linkedin',
+                url: 'google.com',
+            },
+            {
+                type: 'scholar',
+                url: 'google.com',
+            },
+            {
+                type: 'github',
+                url: 'https://github.com/aminzabardast',
+            },
+        ],
     },
 }
