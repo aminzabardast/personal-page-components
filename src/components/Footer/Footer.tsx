@@ -12,6 +12,7 @@ import {
     mdiGithub,
     mdiLinkedin,
 } from '@mdi/js'
+import { isUndefined } from 'lodash'
 
 type socialMediaProps = {
     type: 'linkedin' | 'scholar' | 'instagram' | 'github' | 'twitter'
@@ -19,10 +20,36 @@ type socialMediaProps = {
 }
 
 interface FooterProps {
-    socialMedias: socialMediaProps[]
+    socialMedias?: socialMediaProps[]
+    copyrightsText?: string
+    copyrightsImageSrc?: string
+    copyrightLink?: string
 }
 
-const Footer = ({ socialMedias = [] }: FooterProps) => {
+const icons = {
+    twitter: mdiTwitter,
+    github: mdiGithub,
+    instagram: mdiInstagram,
+    scholar: mdiSchool,
+    linkedin: mdiLinkedin,
+}
+
+const titles = {
+    twitter: 'Twitter',
+    github: 'GitHub',
+    instagram: 'Instagram',
+    scholar: 'Google Scholar',
+    linkedin: 'LinkedIn',
+}
+
+const Footer = ({
+    socialMedias = [],
+    copyrightsImageSrc,
+    copyrightLink,
+    copyrightsText,
+}: FooterProps) => {
+    const hasCopyrightsImage = !isUndefined(copyrightsImageSrc)
+    const hasCopyrightsText = !isUndefined(copyrightsText)
     return (
         <Box>
             <Stack direction={{ xs: 'column', lg: 'row' }} spacing={0}>
@@ -32,30 +59,6 @@ const Footer = ({ socialMedias = [] }: FooterProps) => {
                     spacing={{ xs: 0, lg: 2 }}
                 >
                     {socialMedias.map(({ type, url }: socialMediaProps) => {
-                        let icon
-                        let title: string
-                        switch (type) {
-                            case 'twitter':
-                                icon = mdiTwitter
-                                title = 'Twitter'
-                                break
-                            case 'linkedin':
-                                icon = mdiLinkedin
-                                title = 'LinkedIn'
-                                break
-                            case 'github':
-                                icon = mdiGithub
-                                title = 'GitHub'
-                                break
-                            case 'instagram':
-                                icon = mdiInstagram
-                                title = 'Instagram'
-                                break
-                            case 'scholar':
-                                icon = mdiSchool
-                                title = 'Google Scholar'
-                                break
-                        }
                         return (
                             <Button
                                 key={url}
@@ -63,15 +66,15 @@ const Footer = ({ socialMedias = [] }: FooterProps) => {
                                     cursor: 'pointer',
                                     display: 'inline-flex',
                                     textAlign: 'center',
-                                    textTransform: 'none'
+                                    textTransform: 'none',
                                 }}
                                 href={url}
                                 target="_blank"
                             >
                                 <SvgIcon sx={{ margin: '5px' }}>
-                                    <path d={icon} />
+                                    <path d={icons[type]} />
                                 </SvgIcon>
-                                {title}
+                                {titles[type]}
                             </Button>
                         )
                     })}
@@ -92,15 +95,24 @@ const Footer = ({ socialMedias = [] }: FooterProps) => {
                             <path d={mdiHeart} />
                         </SvgIcon>
                     </Button>
-                    <Button
-                        href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
-                        target="_blank"
-                    >
-                        <img
-                            alt="Creative Commons License"
-                            src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"
-                        />
-                    </Button>
+                    {hasCopyrightsImage && (
+                        <Button
+                            href={copyrightLink ? copyrightLink : ''}
+                            disabled={!copyrightLink}
+                            target="_blank"
+                        >
+                            <img src={copyrightsImageSrc} />
+                        </Button>
+                    )}
+                    {hasCopyrightsText && (
+                        <Button
+                            href={copyrightLink ? copyrightLink : ''}
+                            disabled={!copyrightLink}
+                            target="_blank"
+                        >
+                            {copyrightsText}
+                        </Button>
+                    )}
                 </Stack>
             </Stack>
         </Box>

@@ -5,6 +5,6 @@ import Footer from './Footer'
 
 describe('Footer', () => {
     test('Footer Renders', () => {
-        render(<Footer title={'This is a footer'} />)
+        render(<Footer copyrightsText={'All Rights Reserved'} />)
     })
 })
