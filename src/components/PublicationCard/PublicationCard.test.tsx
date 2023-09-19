@@ -28,12 +28,12 @@ describe('Publication Card', () => {
         const citation: React.JSX.Element = <header>Citation.</header>
         const bibtex: React.JSX.Element = (
             <header title="Bibtex">
-                <pre>@article zabardast2023automated</pre>
+                @article zabardast2023automated This is interesting aaa
             </header>
         )
         const apa: React.JSX.Element = (
             <header title="APA">
-                <pre>@article zabardast2023automated</pre>
+                @article zabardast2023automated This is interesting aaa
             </header>
         )
         render(
@@ -51,9 +51,8 @@ describe('Publication Card', () => {
         ).toBeInTheDocument()
         // Check if the number of inserted elements are correct
         expect(
-            screen
-                .getByTestId('az-citation-references')
-                .querySelectorAll('header').length
+            screen.getByTestId('az-citation-references').querySelectorAll('pre')
+                .length
         ).toEqual(2)
         // Check if titles are parsed and inserted correctly.
         expect(screen.getByText('Bibtex')).toBeInTheDocument()
