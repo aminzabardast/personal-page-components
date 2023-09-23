@@ -1,4 +1,4 @@
-import {fireEvent, render, screen} from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import CitationBox from './CitationBox'
 import React from 'react'
 import '@testing-library/jest-dom'
@@ -9,7 +9,7 @@ Object.assign(navigator, {
     clipboard: {
         writeText,
     },
-});
+})
 
 describe('<CitationBox>...</CitationBox>', () => {
     it('should render.', () => {
@@ -21,7 +21,7 @@ describe('<CitationBox>...</CitationBox>', () => {
         expect(screen.getByText('Cite!')).toBeInTheDocument()
     })
 })
-describe('<CitationBox copyButton>...</CitationBox>', () => {
+describe('<CitationBox> Copy to Clipboard Functionality', () => {
     it('should have copy button.', () => {
         render(<CitationBox copyButton>Cite!</CitationBox>)
         expect(screen.getByRole('button')).toBeInTheDocument()
@@ -30,16 +30,15 @@ describe('<CitationBox copyButton>...</CitationBox>', () => {
         render(<CitationBox copyButton>Cite!</CitationBox>)
         const copyButton = screen.getByRole('button')
         fireEvent.click(copyButton)
-        expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Cite!');
+        expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Cite!')
     })
     it('should copy the citations with line breaks.', () => {
-        render(<CitationBox copyButton>
-            Cite1!
-            Cite2!
-        </CitationBox>)
+        render(<CitationBox copyButton>Cite1! Cite2!</CitationBox>)
         const copyButton = screen.getByRole('button')
         fireEvent.click(copyButton)
-        expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Cite1! Cite2!');
+        expect(navigator.clipboard.writeText).toHaveBeenCalledWith(
+            'Cite1! Cite2!'
+        )
     })
 })
 describe('<CitationBox copyButton="false">...</CitationBox>', () => {
