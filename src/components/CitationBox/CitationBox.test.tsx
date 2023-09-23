@@ -34,7 +34,10 @@ describe('<CitationBox> Copy to Clipboard Functionality', () => {
         expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Cite!')
     })
     it('should copy the citations with line breaks.', () => {
-        render(<CitationBox copyButton>Cite1! Cite2!</CitationBox>)
+        render(<CitationBox copyButton>
+            Cite1!
+            Cite2!
+        </CitationBox>)
         const copyButton = screen.getByRole('button')
         fireEvent.click(copyButton)
         expect(navigator.clipboard.writeText).toHaveBeenCalledWith(
@@ -51,7 +54,10 @@ describe('<CitationBox copyButton="false">...</CitationBox>', () => {
 describe('<CitationBox> SnapShot Test', () => {
     it('should keep producing consistent result.', () => {
         const tree = renderer
-            .create(<CitationBox copyButton>Line1! Line2!</CitationBox>)
+            .create(<CitationBox copyButton>
+                Line1!
+                Line2!
+            </CitationBox>)
             .toJSON()
         expect(tree).toMatchSnapshot()
     })
