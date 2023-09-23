@@ -13,13 +13,13 @@ type Story = StoryObj<typeof meta>
 export const SingleLineWithCopy: Story = {
     args: {
         children: 'A',
-        copyButton: true
+        copyButton: true,
     },
 }
 
 export const MultiLineWithCopy: Story = {
     args: {
         children: ['A', 'B', 'C'],
-        copyButton: true
+        copyButton: true,
     },
 }
