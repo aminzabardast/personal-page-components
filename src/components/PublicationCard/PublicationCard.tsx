@@ -1,13 +1,11 @@
 import React, { ReactNode, useState } from 'react'
-import {
-    Card,
-    CardContent,
-    Typography,
-    Accordion,
-    AccordionSummary,
-    AccordionDetails,
-    Stack,
-} from '@mui/material'
+import Stack from '@mui/material/Stack'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import Accordion from '@mui/material/Accordion'
+import Typography from '@mui/material/Typography'
+import CardContent from '@mui/material/CardContent'
+import Card from '@mui/material/Card'
 import { get, isArray, filter, map } from 'lodash'
 
 type ChildrenProp = ReactNode[]
