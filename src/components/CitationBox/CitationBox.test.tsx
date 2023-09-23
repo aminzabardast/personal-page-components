@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import CitationBox from './CitationBox'
 import React from 'react'
 import '@testing-library/jest-dom'
+import renderer from 'react-test-renderer'
 
 const writeText = jest.fn().mockImplementation(() => Promise.resolve())
 
@@ -45,5 +46,13 @@ describe('<CitationBox copyButton="false">...</CitationBox>', () => {
     it('should not show the copy button if it is disabled.', () => {
         render(<CitationBox copyButton={false}>Cite!</CitationBox>)
         expect(screen.queryByRole('button')).toBeNull()
+    })
+})
+describe('<CitationBox> SnapShot Test', () => {
+    it('should keep producing consistent result.', () => {
+        const tree = renderer
+            .create(<CitationBox copyButton>Line1! Line2!</CitationBox>)
+            .toJSON()
+        expect(tree).toMatchSnapshot()
     })
 })
