@@ -1,7 +1,15 @@
-import { render, screen } from '@testing-library/react'
+import {fireEvent, render, screen} from '@testing-library/react'
 import CitationBox from './CitationBox'
 import React from 'react'
 import '@testing-library/jest-dom'
+
+const writeText = jest.fn().mockImplementation(() => Promise.resolve())
+
+Object.assign(navigator, {
+    clipboard: {
+        writeText,
+    },
+});
 
 describe('<CitationBox>...</CitationBox>', () => {
     it('should render.', () => {
@@ -19,17 +27,24 @@ describe('<CitationBox copyButton>...</CitationBox>', () => {
         expect(screen.getByRole('button')).toBeInTheDocument()
     })
     it('should copy the citation to clipboard when copy button is pressed.', () => {
-        throw Error('Not Implemented.')
-    })
-    it('should change the button text to `Copied!` and then back to `Copy`.', () => {
-        throw Error('Not Implemented.')
+        render(<CitationBox copyButton>Cite!</CitationBox>)
+        const copyButton = screen.getByRole('button')
+        fireEvent.click(copyButton)
+        expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Cite!');
     })
     it('should copy the citations with line breaks.', () => {
-        throw Error('Not Implemented.')
+        render(<CitationBox copyButton>
+            Cite1!
+            Cite2!
+        </CitationBox>)
+        const copyButton = screen.getByRole('button')
+        fireEvent.click(copyButton)
+        expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Cite1! Cite2!');
     })
 })
 describe('<CitationBox copyButton="false">...</CitationBox>', () => {
     it('should not show the copy button if it is disabled.', () => {
-        throw Error('Not Implemented.')
+        render(<CitationBox copyButton={false}>Cite!</CitationBox>)
+        expect(screen.queryByRole('button')).toBeNull()
     })
 })
