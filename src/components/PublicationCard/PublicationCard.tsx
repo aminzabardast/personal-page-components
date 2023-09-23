@@ -65,11 +65,7 @@ const PublicationCard = ({ children }: PublicationCardProp) => {
                                         </AccordionSummary>
                                         <AccordionDetails>
                                             {textToHtml(
-                                                get(
-                                                    item,
-                                                    'props.children',
-                                                    ''
-                                                )
+                                                get(item, 'props.children', '')
                                             )}
                                         </AccordionDetails>
                                     </Accordion>
