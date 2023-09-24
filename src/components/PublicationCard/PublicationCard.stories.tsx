@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import PublicationCard from './PublicationCard'
 
 const meta: Meta<typeof PublicationCard> = {
-    title: 'Publication Card',
+    title: 'Publications/Card',
     component: PublicationCard,
 }
 

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import CitationBox from './CitationBox'
 
 const meta: Meta<typeof CitationBox> = {
-    title: 'CitationBox',
+    title: 'Publications/CitationBox',
     component: CitationBox,
 }
 
