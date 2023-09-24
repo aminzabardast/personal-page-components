@@ -2,7 +2,8 @@ import React, { ReactNode, Children } from 'react'
 import { isArray, isNull, isUndefined } from 'lodash'
 import { mdiContentCopy } from '@mdi/js'
 import SvgIcon from '@mui/material/SvgIcon'
-import IconButton from '@mui/material/IconButton'
+import Button from '@mui/material/Button'
+import Box from '@mui/material/Box'
 
 interface CitationBoxProps {
     children: ReactNode[] | ReactNode
@@ -11,10 +12,19 @@ interface CitationBoxProps {
 
 const textToHtml = (value: string) => {
     return (
-        <pre
+        <Box
+            component="pre"
+            sx={{
+                overflow: 'auto',
+                padding: '10px',
+                backgroundColor: (theme) =>
+                    theme.palette.mode === 'dark' ? 'grey.800' : 'grey.300',
+                borderColor: (theme) =>
+                    theme.palette.mode === 'dark' ? 'grey.800' : 'grey.300',
+                borderRadius: 2,
+            }}
             dangerouslySetInnerHTML={{ __html: value }}
-            style={{ overflowX: 'auto' }}
-        ></pre>
+        ></Box>
     )
 }
 
@@ -41,13 +51,25 @@ const CitationBox = ({ children, copyButton = false }: CitationBoxProps) => {
             .catch(() => {})
     }
     return (
-        <div data-testid="citation-box">
+        <div data-testid="citation-box" style={{ position: 'relative' }}>
             {copyButton && (
-                <IconButton onClick={copyFunction}>
-                    <SvgIcon>
-                        <path d={mdiContentCopy} />
-                    </SvgIcon>
-                </IconButton>
+                <Button
+                    size="small"
+                    onClick={copyFunction}
+                    variant="contained"
+                    endIcon={
+                        <SvgIcon fontSize="inherit">
+                            <path d={mdiContentCopy} />
+                        </SvgIcon>
+                    }
+                    style={{
+                        position: 'absolute',
+                        top: 10,
+                        right: 10,
+                    }}
+                >
+                    Copy
+                </Button>
             )}
             {textToHtml(citation)}
         </div>

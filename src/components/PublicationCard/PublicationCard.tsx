@@ -16,17 +16,6 @@ interface PublicationCardProp {
     children: ChildrenProp | ChildProp
 }
 
-const textToHtml = (value: string) => {
-    // TODO: make this a different component with copy button and better scroll.
-    // Check if build is minimal
-    return (
-        <pre
-            dangerouslySetInnerHTML={{ __html: value }}
-            style={{ overflowX: 'scroll' }}
-        ></pre>
-    )
-}
-
 const PublicationCard = ({ children }: PublicationCardProp) => {
     const [expanded, setExpanded] = useState(0)
     const handleChange = (panel: number) => {

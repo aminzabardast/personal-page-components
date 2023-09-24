@@ -3,9 +3,14 @@
 exports[`<CitationBox> SnapShot Test should keep producing consistent result. 1`] = `
 <div
   data-testid="citation-box"
+  style={
+    {
+      "position": "relative",
+    }
+  }
 >
   <button
-    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+    className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall css-6qwktu-MuiButtonBase-root-MuiButton-root"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -20,29 +25,37 @@ exports[`<CitationBox> SnapShot Test should keep producing consistent result. 1`
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
+    style={
+      {
+        "position": "absolute",
+        "right": 10,
+        "top": 10,
+      }
+    }
     tabIndex={0}
     type="button"
   >
-    <svg
-      aria-hidden={true}
-      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-      focusable="false"
-      viewBox="0 0 24 24"
+    Copy
+    <span
+      className="MuiButton-endIcon MuiButton-iconSizeSmall css-155nyw6-MuiButton-endIcon"
     >
-      <path
-        d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
-      />
-    </svg>
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+        />
+      </svg>
+    </span>
   </button>
   <pre
+    className="MuiBox-root css-1sod976"
     dangerouslySetInnerHTML={
       {
         "__html": "Line1! Line2!",
-      }
-    }
-    style={
-      {
-        "overflowX": "auto",
       }
     }
   />
