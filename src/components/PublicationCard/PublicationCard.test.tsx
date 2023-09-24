@@ -2,8 +2,9 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import PublicationCard from './PublicationCard'
+import renderer from "react-test-renderer";
 
-describe('Publication Card', () => {
+describe('<PublicationCard></PublicationCard>', () => {
     it('should render', () => {
         render(
             <PublicationCard>
@@ -28,12 +29,14 @@ describe('Publication Card', () => {
         const citation: React.JSX.Element = <header>Citation.</header>
         const bibtex: React.JSX.Element = (
             <header title="Bibtex">
-                @article zabardast2023automated This is interesting aaa
+                @article zabardast2023automated
+                This is interesting
             </header>
         )
         const apa: React.JSX.Element = (
             <header title="APA">
-                @article zabardast2023automated This is interesting aaa
+                @article zabardast2023automated
+                This is interesting
             </header>
         )
         render(
@@ -57,5 +60,21 @@ describe('Publication Card', () => {
         // Check if titles are parsed and inserted correctly.
         expect(screen.getByText('Bibtex')).toBeInTheDocument()
         expect(screen.getByText('APA')).toBeInTheDocument()
+    })
+})
+describe('<PublicationCard> SnapShot Test', () => {
+    it('should keep producing consistent result.', () => {
+        const tree = renderer
+            .create(
+                <PublicationCard>
+                    <header>Citation.</header>
+                    <header title="Bibtex">
+                        @article zabardast2023automated
+                        This is interesting
+                    </header>
+                </PublicationCard>
+            )
+            .toJSON()
+        expect(tree).toMatchSnapshot()
     })
 })
