@@ -8,8 +8,11 @@ import Box from '@mui/material/Box'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
+import Drawer from '@mui/material/Drawer'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
 import SvgIcon from '@mui/material/SvgIcon'
 import { mdiMenu } from '@mdi/js'
 import ThemeChangerButton from '../ThemeChangerButton/ThemeChangerButton'
@@ -42,16 +45,10 @@ const Header = ({
     showThemeChanger = false,
     onThemeChange,
 }: HeaderProps) => {
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-
-    const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget)
+    const [drawerState, setDrawerState] = React.useState(false)
+    const toggleMenu = () => {
+        setDrawerState(!drawerState)
     }
-
-    const handleClose = () => {
-        setAnchorEl(null)
-    }
-
     const theme = useTheme()
 
     const handleThemeChange = (mode: mode) => {
@@ -133,7 +130,7 @@ const Header = ({
                         aria-label="account of current user"
                         aria-controls="menu-appbar"
                         aria-haspopup="true"
-                        onClick={handleMenu}
+                        onClick={toggleMenu}
                         color="inherit"
                         sx={{ display: { lg: 'none' } }}
                     >
@@ -141,33 +138,25 @@ const Header = ({
                             <path d={mdiMenu} />
                         </SvgIcon>
                     </IconButton>
-                    <Menu
-                        id="menu-appbar"
-                        anchorEl={anchorEl}
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        open={Boolean(anchorEl)}
-                        onClose={handleClose}
+                    <Drawer
+                        anchor="bottom"
+                        open={drawerState}
+                        onClose={toggleMenu}
                     >
-                        {links?.map(({ title }: HeaderLink): JSX.Element => {
-                            return (
-                                <MenuItem
-                                    key={title}
-                                    color="inherit"
-                                    onClick={handleClose}
-                                >
-                                    {title}
-                                </MenuItem>
-                            )
-                        })}
-                    </Menu>
+                        <Box role="presentation" onClick={toggleMenu}>
+                            <List>
+                                {links.map((item, index) => (
+                                    <ListItem key={index} disablePadding>
+                                        <ListItemButton>
+                                            <ListItemText
+                                                primary={item.title}
+                                            />
+                                        </ListItemButton>
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </Box>
+                    </Drawer>
                 </div>
             </Toolbar>
         </AppBar>
@@ -175,3 +164,4 @@ const Header = ({
 }
 
 export default Header
+export { HeaderLink }
