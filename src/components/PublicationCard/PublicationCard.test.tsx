@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import PublicationCard from './PublicationCard'
-import renderer from "react-test-renderer";
+import renderer from 'react-test-renderer'
 
 describe('<PublicationCard></PublicationCard>', () => {
     it('should render', () => {

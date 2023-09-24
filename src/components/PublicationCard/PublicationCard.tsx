@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import Card from '@mui/material/Card'
 import { get, isArray, filter, map } from 'lodash'
-import CitationBox from "../CitationBox";
+import CitationBox from '../CitationBox'
 
 type ChildrenProp = ReactNode[]
 type ChildProp = ReactNode
@@ -64,7 +64,11 @@ const PublicationCard = ({ children }: PublicationCardProp) => {
                                         </AccordionSummary>
                                         <AccordionDetails>
                                             <CitationBox copyButton>
-                                                {get(item, 'props.children', '')}
+                                                {get(
+                                                    item,
+                                                    'props.children',
+                                                    ''
+                                                )}
                                             </CitationBox>
                                         </AccordionDetails>
                                     </Accordion>
