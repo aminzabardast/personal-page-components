@@ -18,13 +18,11 @@ import { mdiMenu } from '@mdi/js'
 import ThemeChangerButton from '../ThemeChangerButton/ThemeChangerButton'
 import { isUndefined } from 'lodash'
 import { useTheme } from '@mui/material/styles'
+import { mode } from '../ThemeChangerButton/ThemeChangerButton'
 
 type HeaderLink = {
     title: string
 }
-
-// TODO: Import this from `ThemeChangerButton` component
-type mode = 'light' | 'dark'
 
 interface HeaderProps {
     title: string

@@ -66,3 +66,4 @@ const ThemeChangerButton = ({
 }
 
 export default ThemeChangerButton
+export { mode }
