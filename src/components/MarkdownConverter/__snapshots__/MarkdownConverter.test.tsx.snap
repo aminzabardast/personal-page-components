@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MarkdownConverter /> SnapShot Test should keep producing consistent result. 1`] = `
+<div
+  data-testid="az-blog-object"
+>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+      href="https://aminzabardast.com"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      Category
+    </a>
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <h1
+      className="MuiTypography-root MuiTypography-h1 css-1q74aok-MuiTypography-root"
+    >
+      This is a Title
+    </h1>
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <div
+      className="MuiStack-root css-pl8gqh-MuiStack-root"
+    >
+      <div
+        className="MuiStack-root css-pl8gqh-MuiStack-root"
+      >
+        <div
+          className="MuiAvatar-root MuiAvatar-circular css-xwmgj5-MuiAvatar-root"
+        >
+          <img
+            className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+            src="https://aminzabardast.com/image.png"
+          />
+        </div>
+        <span
+          className="MuiTypography-root MuiTypography-h5 css-1wn2x41-MuiTypography-root"
+        >
+          Amin Zabardast
+        </span>
+      </div>
+      <hr
+        className="MuiDivider-root MuiDivider-fullWidth MuiDivider-vertical MuiDivider-flexItem css-1tk1bks-MuiDivider-root"
+      />
+      <span
+        className="MuiTypography-root MuiTypography-h5 css-1wn2x41-MuiTypography-root"
+      >
+        January 1st, 2000
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-76a484-MuiContainer-root"
+  >
+    <hr
+      className="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+    />
+  </div>
+  <div
+    className="MuiBox-root css-1n2mv2k"
+  >
+    <span
+      className="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
+      role="progressbar"
+      style={
+        {
+          "height": 40,
+          "width": 40,
+        }
+      }
+    >
+      <svg
+        className="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+        viewBox="22 22 44 44"
+      >
+        <circle
+          className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+          cx={44}
+          cy={44}
+          fill="none"
+          r={20.2}
+          strokeWidth={3.6}
+          style={{}}
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
