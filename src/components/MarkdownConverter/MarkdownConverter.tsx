@@ -3,11 +3,11 @@ import { Converter } from 'showdown'
 import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
-import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 import Divider from '@mui/material/Divider'
 import Avatar from '@mui/material/Avatar'
+import Chip from '@mui/material/Chip'
 import { format } from 'date-fns'
 import './MarkdownConverter.css'
 
@@ -22,7 +22,7 @@ type Author = {
 }
 
 interface MarkdownConverterProps {
-    category?: Category
+    categories?: Category[]
     title: string
     date?: Date
     author?: Author
@@ -30,7 +30,7 @@ interface MarkdownConverterProps {
 }
 
 const MarkdownConverter = ({
-    category,
+    categories,
     title,
     date,
     author,
@@ -52,11 +52,6 @@ const MarkdownConverter = ({
 
     return (
         <div data-testid="az-blog-object">
-            {category && (
-                <Container component="div">
-                    <Link href={category.url}>{category.title}</Link>
-                </Container>
-            )}
             {title && (
                 <Container component="div">
                     <Typography variant="h1">{title}</Typography>
@@ -108,6 +103,24 @@ const MarkdownConverter = ({
                         __html: converter.makeHtml(markdownText),
                     }}
                 ></Container>
+            )}
+            {categories && (
+                <Container sx={{ paddingTop: '40px' }}>
+                    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+                        {categories.map((category) => {
+                            return (
+                                <Chip
+                                    data-testid="az-categories"
+                                    key={category.title}
+                                    label={category.title}
+                                    component="a"
+                                    href={category.url}
+                                    clickable
+                                />
+                            )
+                        })}
+                    </Stack>
+                </Container>
             )}
         </div>
     )

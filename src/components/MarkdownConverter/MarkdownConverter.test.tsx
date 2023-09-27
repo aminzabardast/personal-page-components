@@ -13,10 +13,20 @@ global.fetch = jest.fn(() =>
 const examplePost = (
     <MarkdownConverter
         title="This is a Title"
-        category={{
-            title: 'Category',
-            url: 'https://aminzabardast.com',
-        }}
+        categories={[
+            {
+                title: 'Category1',
+                url: 'https://aminzabardast.com',
+            },
+            {
+                title: 'Category2',
+                url: 'https://aminzabardast.com',
+            },
+            {
+                title: 'Category3',
+                url: 'https://aminzabardast.com',
+            },
+        ]}
         date={new Date('2000-01-01T00:00:00')}
         author={{
             name: 'Amin Zabardast',
@@ -39,19 +49,23 @@ describe('<MarkdownConverter />', () => {
             expect(screen.getByText('This is a Title')).toBeInTheDocument()
         })
     })
-    it('should show the category title.', async () => {
+    it('should show the category titles.', async () => {
         render(examplePost)
         await waitFor(() => {
-            expect(screen.getByText('Category')).toBeInTheDocument()
+            expect(screen.getAllByTestId('az-categories').length).toEqual(3)
         })
     })
     it('should show the category as a link.', async () => {
         render(examplePost)
         await waitFor(() => {
-            expect(screen.getByText('Category')).toHaveAttribute(
-                'href',
-                'https://aminzabardast.com'
-            )
+            screen
+                .getAllByTestId('az-categories')
+                .forEach((item) =>
+                    expect(item).toHaveAttribute(
+                        'href',
+                        'https://aminzabardast.com'
+                    )
+                )
         })
     })
     it('should show the date.', async () => {

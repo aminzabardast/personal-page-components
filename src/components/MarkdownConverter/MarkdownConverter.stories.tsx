@@ -13,10 +13,24 @@ type Story = StoryObj<typeof meta>
 
 export const Example1: Story = {
     args: {
-        category: {
-            title: 'Category Text',
-            url: 'https://google.com/',
-        },
+        categories: [
+            {
+                title: 'Category Text 1',
+                url: 'https://google.com/',
+            },
+            {
+                title: 'Category Text 2',
+                url: 'https://google.com/',
+            },
+            {
+                title: 'Category Text 3',
+                url: 'https://google.com/',
+            },
+            {
+                title: 'Category Text 4',
+                url: 'https://google.com/',
+            },
+        ],
         title: 'This is a Title',
         author: {
             name: 'Amin Zabardast',
@@ -31,10 +45,24 @@ export const Example1: Story = {
 
 export const Example2: Story = {
     args: {
-        category: {
-            title: 'Category Text',
-            url: 'https://google.com/',
-        },
+        categories: [
+            {
+                title: 'Category Text 1',
+                url: 'https://google.com/',
+            },
+            {
+                title: 'Category Text 2',
+                url: 'https://google.com/',
+            },
+            {
+                title: 'Category Text 3',
+                url: 'https://google.com/',
+            },
+            {
+                title: 'Category Text 4',
+                url: 'https://google.com/',
+            },
+        ],
         title: 'This is a Title',
         author: {
             name: 'Amin Zabardast',

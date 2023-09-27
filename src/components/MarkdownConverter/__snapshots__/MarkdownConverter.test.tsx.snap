@@ -7,18 +7,6 @@ exports[`<MarkdownConverter /> SnapShot Test should keep producing consistent re
   <div
     className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
   >
-    <a
-      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
-      href="https://aminzabardast.com"
-      onBlur={[Function]}
-      onFocus={[Function]}
-    >
-      Category
-    </a>
-  </div>
-  <div
-    className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
-  >
     <h1
       className="MuiTypography-root MuiTypography-h1 css-1q74aok-MuiTypography-root"
     >
@@ -93,6 +81,86 @@ exports[`<MarkdownConverter /> SnapShot Test should keep producing consistent re
         />
       </svg>
     </span>
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-76a484-MuiContainer-root"
+  >
+    <div
+      className="MuiStack-root css-w7gobd-MuiStack-root"
+    >
+      <a
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-clickable MuiChip-clickableColorDefault MuiChip-filledDefault css-1b2taxe-MuiButtonBase-root-MuiChip-root"
+        data-testid="az-categories"
+        href="https://aminzabardast.com"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label"
+        >
+          Category1
+        </span>
+      </a>
+      <a
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-clickable MuiChip-clickableColorDefault MuiChip-filledDefault css-1b2taxe-MuiButtonBase-root-MuiChip-root"
+        data-testid="az-categories"
+        href="https://aminzabardast.com"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label"
+        >
+          Category2
+        </span>
+      </a>
+      <a
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-clickable MuiChip-clickableColorDefault MuiChip-filledDefault css-1b2taxe-MuiButtonBase-root-MuiChip-root"
+        data-testid="az-categories"
+        href="https://aminzabardast.com"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label"
+        >
+          Category3
+        </span>
+      </a>
+    </div>
   </div>
 </div>
 `;
