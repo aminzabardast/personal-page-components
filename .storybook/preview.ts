@@ -1,22 +1,8 @@
 import type { Preview } from '@storybook/react'
 
-import { ThemeProvider, CssBaseline, createTheme } from '@mui/material'
+import { ThemeProvider, CssBaseline } from '@mui/material'
 import { withThemeFromJSXProvider } from '@storybook/addon-styling'
-
-/* TODO: update import for your custom Material UI themes */
-// import { lightTheme, darkTheme } from '../path/to/themes';
-
-// TODO: Create a Themes Directory and Import These
-const darkTheme = createTheme({
-    palette: {
-        mode: 'dark',
-    },
-})
-const lightTheme = createTheme({
-    palette: {
-        mode: 'light',
-    },
-})
+import { lightTheme, darkTheme } from '../src'
 
 // Import your fontface CSS files here
 // Don't have any? We recommend installing and using @fontsource/roboto
