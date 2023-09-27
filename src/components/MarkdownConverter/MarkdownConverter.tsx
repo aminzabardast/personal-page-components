@@ -10,6 +10,9 @@ import Avatar from '@mui/material/Avatar'
 import Chip from '@mui/material/Chip'
 import { format } from 'date-fns'
 import './MarkdownConverter.css'
+import { mdiCommentOutline } from '@mdi/js'
+import Button from '@mui/material/Button'
+import SvgIcon from '@mui/material/SvgIcon'
 
 type Category = {
     title: string
@@ -27,6 +30,7 @@ interface MarkdownConverterProps {
     date?: Date
     author?: Author
     fileUrl: string
+    mediumUrl?: string
 }
 
 const MarkdownConverter = ({
@@ -35,6 +39,7 @@ const MarkdownConverter = ({
     date,
     author,
     fileUrl,
+    mediumUrl,
 }: MarkdownConverterProps) => {
     const [isLoading, setIsLoading] = useState(true)
 
@@ -120,6 +125,26 @@ const MarkdownConverter = ({
                             )
                         })}
                     </Stack>
+                </Container>
+            )}
+            {mediumUrl && (
+                <Container sx={{ paddingTop: '40px' }}>
+                    <Button
+                        component="a"
+                        href={mediumUrl}
+                        data-testid="az-medium-link"
+                        target="_blank"
+                        style={{
+                            textTransform: 'none',
+                        }}
+                        startIcon={
+                            <SvgIcon>
+                                <path d={mdiCommentOutline}></path>
+                            </SvgIcon>
+                        }
+                    >
+                        Leave a comment on Medium
+                    </Button>
                 </Container>
             )}
         </div>

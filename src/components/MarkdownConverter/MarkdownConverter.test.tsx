@@ -33,6 +33,7 @@ const examplePost = (
             imageUrl: 'https://aminzabardast.com/image.png',
         }}
         fileUrl="https://blog.aminzabardast.com/someMarkDownFile.md"
+        mediumUrl="https://medium.com"
     />
 )
 
@@ -49,13 +50,13 @@ describe('<MarkdownConverter />', () => {
             expect(screen.getByText('This is a Title')).toBeInTheDocument()
         })
     })
-    it('should show the category titles.', async () => {
+    it('should show tags.', async () => {
         render(examplePost)
         await waitFor(() => {
             expect(screen.getAllByTestId('az-categories').length).toEqual(3)
         })
     })
-    it('should show the category as a link.', async () => {
+    it('should show tags as links.', async () => {
         render(examplePost)
         await waitFor(() => {
             screen
@@ -93,6 +94,17 @@ describe('<MarkdownConverter />', () => {
         render(examplePost)
         await waitFor(() => {
             expect(screen.getByText('Header1')).toBeInTheDocument()
+        })
+    })
+    it('should show link to Medium for comments.', async () => {
+        render(examplePost)
+        await waitFor(() => {
+            expect(
+                screen.getByText('Leave a comment on Medium')
+            ).toBeInTheDocument()
+            expect(
+                screen.getByText('Leave a comment on Medium')
+            ).toHaveAttribute('href', 'https://medium.com')
         })
     })
 })

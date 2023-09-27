@@ -162,5 +162,49 @@ exports[`<MarkdownConverter /> SnapShot Test should keep producing consistent re
       </a>
     </div>
   </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-76a484-MuiContainer-root"
+  >
+    <a
+      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1ib5102-MuiButtonBase-root-MuiButton-root"
+      data-testid="az-medium-link"
+      href="https://medium.com"
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        {
+          "textTransform": "none",
+        }
+      }
+      tabIndex={0}
+      target="_blank"
+    >
+      <span
+        className="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M10,16V19.08L13.08,16H20V4H4V16H10Z"
+          />
+        </svg>
+      </span>
+      Leave a comment on Medium
+    </a>
+  </div>
 </div>
 `;
